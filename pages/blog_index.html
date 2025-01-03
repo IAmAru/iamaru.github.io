@@ -10,17 +10,17 @@
   </head>
   
   <script src="../script.js"></script>
+  <script>
+  fetch('../header.html')
+    .then(response => response.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+    });
+    </script>
 
 <body>
   <div class="container">
-    <header class="header">
-      <h1>Welcome to my website!</h1>
-    </header>
     <main class="content">
-      <h2>About Me</h2>
-      <p>I am a 25-year-old geek with too many hobbies.</p>
-      <h2>My Career</h2>
-      <p>I work as a Cybersecurity Analyst, and I am GCIH and GCFA certified. I am working on my GPEN certification!</p>
       <hr><br>
       <h2>Blog Posts</h2>
       <p><a href="blog_posts/81424_crt_mod.html">Installing an RGB Mux Board to my Sony KV27S15 (8/14/24)</a></p>
