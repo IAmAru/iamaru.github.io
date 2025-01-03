@@ -1,6 +1,7 @@
 // Create and insert the burger menu and sidebar HTML into the page dynamically
 document.addEventListener('DOMContentLoaded', () => {
     // Burger menu template
+
     const burgerMenuHTML = `
       <div id="burger-menu" class="burger-menu">
         <div class="burger-icon">
@@ -16,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="sidebar" class="sidebar">
         <ul>
         <li></li>
-        <img src="../../assets/ciel.PNG" width="160px" />
+        <img src="assets/ciel.PNG" width="160px" />
         <li class="no-hover"></li>
         <li class="hover"><a href="../../index.html">Home</a></li>
         <li><a href="https://backloggery.com/aru_star_">Backloggery</a></li>
@@ -32,6 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Insert the burger menu and sidebar into the page body
     document.body.insertAdjacentHTML('afterbegin', burgerMenuHTML + sidebarHTML);
   
+    fetch('../header.html')
+    .then(response => response.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+    });
+    
     // Select the burger menu and sidebar elements
     const burgerMenu = document.getElementById('burger-menu');
     const sidebar = document.getElementById('sidebar');
