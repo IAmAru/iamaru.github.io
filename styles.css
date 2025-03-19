@@ -1,0 +1,90 @@
+/* styles.css */
+:root {
+  --main-color: #3498db;
+  --font-family: 'Arial', sans-serif;
+}
+
+.header {
+  margin-left: 60px;
+}
+.content {
+  margin-left: 60px;
+  padding: 1em;
+  overflow: hidden;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.sidebar ul li:hover {
+  background-color: #29292a;
+  border-color: #fff; /* Adds a white border on hover */
+}
+
+/* Non-hoverable section */
+.sidebar ul li.no-hover:hover {
+  background-color: transparent; /* Prevent background color change on hover */
+  border-color: transparent; /* Prevent border color change */
+  cursor: default; /* Optional: make cursor look non-interactive */
+}
+
+tr:nth-child(1) {
+  background-color: #84e4e2;
+  color: white;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden off-screen */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  color: #fff;
+  transition: left 0.3s ease; /* Smooth transition for sliding in and out */
+}
+
+.sidebar.active {
+  left: 0; /* When active, slide in */
+}
+/* Hover effect for sidebar items */
+
+
+
+/* Burger Menu Icon */
+.burger-menu {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.burger-icon span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  margin: 6px 0;
+  background-color: #3498db;
+  transition: 0.3s ease;
+}
+
+/* Burger icon animation */
+.burger-menu.active .burger-icon span:nth-child(1) {
+  transform: rotate(45deg);
+  transform-origin: top left;
+}
+
+.burger-menu.active .burger-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-icon span:nth-child(3) {
+  transform: rotate(-45deg);
+  transform-origin: bottom left;
+}
