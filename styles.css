@@ -3,7 +3,7 @@
 body{
   background-image: url(assets/pic0.avif);
   background-repeat: no-repeat;
-  background-size:contain;
+  background-size:cover;
   background-color: #fff;
   overflow: hidden;
 }
