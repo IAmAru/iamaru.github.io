@@ -32,12 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Insert the burger menu and sidebar into the page body
     document.body.insertAdjacentHTML('afterbegin', burgerMenuHTML + sidebarHTML);
-  
-    fetch('../../header.html')
-    .then(response => response.text())
-    .then(html => {
-      document.body.insertAdjacentHTML('afterbegin', html);
-    });
     
     // Select the burger menu and sidebar elements
     const burgerMenu = document.getElementById('burger-menu');
