@@ -32,6 +32,18 @@ video{
   object-fit: contain;
 }
 
+a:link{
+    color:#FFFFFF;
+}
+
+a:visited{
+    color:#FFFFFF;
+}
+
+a:hover {
+    color:#FFFFFF;
+}
+
 .container {
   position: absolute;
   overflow-y: auto;
