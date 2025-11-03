@@ -42,6 +42,18 @@ video{
   border-radius: 10px; /* Optional: for rounded corners */
   color: white; /* Make text visible against the dark background */
 }
+
+.index {
+  position: absolute;
+  overflow-y: auto;
+  width: 92%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  margin: 70px;
+  border-radius: 10px; /* Optional: for rounded corners */
+  color: white; /* Make text visible against the dark background */
+}
+
 :root {
   --main-color: #3498db;
   --font-family: 'Arial', sans-serif;
