@@ -10,6 +10,30 @@ body{
   overflow: hidden;
 }
 
+.site-logo {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+}
+
+.site-logo img {
+  height: 120px;
+  width: auto;
+  transition: transform 0.2s ease;
+}
+
+.site-logo img:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+  .site-logo img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 img{
   max-width: 100%;
   min-width: none;
@@ -233,4 +257,3 @@ tr:nth-child(1) {
 @keyframes zoomIn {
   to { transform: scale(1); }
 }
-

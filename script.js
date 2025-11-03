@@ -78,3 +78,11 @@ document.addEventListener('click', (e) => {
   };
   document.addEventListener('keydown', onKey);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const logo = document.createElement('a');
+  logo.href = '../../index.html'; // or another page if you prefer
+  logo.className = 'site-logo';
+  logo.innerHTML = `<img src="../../assets/signboard.png" alt="Site Logo">`;
+  document.body.appendChild(logo);
+});
