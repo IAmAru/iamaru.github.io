@@ -4,6 +4,8 @@ body{
   background-image: url(assets/pic0.avif);
   background-repeat: no-repeat;
   background-size:cover;
+  background-attachment: fixed;
+  min-height: 100dvh;
   background-color: #fff;
   overflow: hidden;
 }
