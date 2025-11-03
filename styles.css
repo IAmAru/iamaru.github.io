@@ -63,6 +63,11 @@ video{
   overflow: hidden;
 }
 
+ul
+{
+  list-style-type: none;
+}
+
 li a {
   display: block;
   color: #fff;
