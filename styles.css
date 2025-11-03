@@ -56,7 +56,7 @@ a:hover {
 }
 
 .index {
-  position: absolute;
+  position: relative;
   overflow-y: auto;
   width: 92%;
   height: auto;
