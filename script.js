@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Insert the burger menu and sidebar into the page body
     document.body.insertAdjacentHTML('afterbegin', burgerMenuHTML + sidebarHTML);
   
-    fetch('../../header.html')
+    fetch('header.html')
     .then(response => response.text())
     .then(html => {
       document.body.insertAdjacentHTML('afterbegin', html);
@@ -50,3 +50,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('clickable-img')) {
+    const overlay = document.createElement('div');
+    overlay.classList.add('image-overlay');
+    overlay.innerHTML = `<img src="${e.target.src}" alt="">`;
+    document.body.appendChild(overlay);
+    overlay.addEventListener('click', () => overlay.remove());
+  }
+});
+
+document.addEventListener('click', (e) => {
+  // only images inside .content (change selector if needed)
+  const clickedImg = e.target.closest('.content img');
+  if (!clickedImg) return;
+
+  // optional: ignore certain images, e.g., burger icon inside .menu
+  if (clickedImg.closest('.no-lightbox')) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'image-overlay';
+  overlay.innerHTML = `<img src="${clickedImg.src}" alt="${clickedImg.alt || ''}">`;
+  document.body.appendChild(overlay);
+
+  overlay.addEventListener('click', () => overlay.remove());
+
+  // optional: close on Esc
+  const onKey = (ke) => {
+    if (ke.key === 'Escape') {
+      overlay.remove();
+      document.removeEventListener('keydown', onKey);
+    }
+  };
+  document.addEventListener('keydown', onKey);
+});

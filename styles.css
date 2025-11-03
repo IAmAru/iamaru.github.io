@@ -1,5 +1,13 @@
 /* styles.css */
 
+body{
+  background-image: url(assets/pic0.avif);
+  background-repeat: no-repeat;
+  background-size:cover;
+  background-color: #fff;
+  overflow: hidden;
+}
+
 img{
   max-width: 100%;
   min-width: none;
@@ -25,9 +33,14 @@ video{
 }
 
 .container {
+  position: absolute;
+  overflow-y: auto;
   width: 92%;
-  margin: auto;
   height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  margin: 70px;
+  border-radius: 10px; /* Optional: for rounded corners */
+  color: white; /* Make text visible against the dark background */
 }
 :root {
   --main-color: #3498db;
@@ -35,7 +48,14 @@ video{
 }
 
 .header {
-  margin-left: 60px;
+  position: relative;
+  overflow-y: auto;
+  width: 92%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  margin: 70px;
+  border-radius: 10px; /* Optional: for rounded corners */
+  color: white; /* Make text visible against the dark background */
 }
 .content {
   margin-left: 60px;
@@ -45,7 +65,7 @@ video{
 
 li a {
   display: block;
-  color: #000;
+  color: #fff;
   padding: 8px 16px;
   text-decoration: none;
 }
@@ -70,11 +90,12 @@ tr:nth-child(1) {
 /* Sidebar Styles */
 .sidebar {
   position: fixed;
+  z-index: 1000;
   top: 0;
   left: -250px; /* Initially hidden off-screen */
   width: 250px;
   height: 100%;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.75); /* Black with 50% opacity */
   color: #fff;
   transition: left 0.3s ease; /* Smooth transition for sliding in and out */
 }
@@ -85,13 +106,12 @@ tr:nth-child(1) {
 /* Hover effect for sidebar items */
 
 
-
 /* Burger Menu Icon */
 .burger-menu {
   position: fixed;
   top: 20px;
   left: 20px;
-  z-index: 100;
+  z-index: 1001;
   cursor: pointer;
 }
 
@@ -123,3 +143,48 @@ tr:nth-child(1) {
   overflow-x: scroll;
 }
 
+.clickable-img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.clickable-img:hover {
+  transform: scale(1.03);
+}
+
+/* 🔥 The overlay that appears when you click an image */
+.image-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeIn 0.2s ease;
+}
+
+/* Centered image styling */
+.image-overlay img {
+  width: auto;
+  max-width: 90vw;
+  max-height: 90vw;
+  object-fit: contain;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  transform: scale(1);
+  animation: zoomIn 0.25 ease forwards;
+}
+
+/* Optional smooth fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  to { transform: scale(1); }
+}
