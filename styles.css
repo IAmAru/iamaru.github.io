@@ -3,7 +3,7 @@
 body{
   background-image: url(assets/pic0.avif);
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size:contain;
   background-color: #fff;
   overflow: hidden;
 }
@@ -188,3 +188,4 @@ tr:nth-child(1) {
 @keyframes zoomIn {
   to { transform: scale(1); }
 }
+
