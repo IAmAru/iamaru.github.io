@@ -38,7 +38,7 @@ video{
   width: 92%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
-  margin: 70px;
+  margin: auto;
   border-radius: 10px; /* Optional: for rounded corners */
   color: white; /* Make text visible against the dark background */
 }
