@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <li><a href="https://backloggery.com/aru_star_">Backloggery</a></li>
         <li><a href="mailto:aru@hoshikawa-aru.com">Contact</a></li>
         <li><a href="../../pages/blog_index.html">Blog</a></li>
+        <li><a href="../../pages/ciel_index.html">Ciel Fumo Pics</a></li>
         <li class="no-hover"></li>
         <li class="no-hover"><a>Hello, and welcome to my website! It is under construction. Please check back in sometime to see the things I've been up to!</a></li>
         </ul>
@@ -64,7 +65,17 @@ document.addEventListener('click', (e) => {
 
   const overlay = document.createElement('div');
   overlay.className = 'image-overlay';
-  overlay.innerHTML = `<img src="${clickedImg.src}" alt="${clickedImg.alt || ''}">`;
+
+  const overlayImg = document.createElement('img');
+  overlayImg.src = clickedImg.dataset.fullsize || clickedImg.src;
+  overlayImg.alt = clickedImg.alt || '';
+
+  const caption = document.createElement('div');
+  caption.className = 'image-caption'
+  caption.textContent = clickedImg.alt || '';
+
+  overlay.appendChild(overlayImg);
+  overlay.appendChild(caption);
   document.body.appendChild(overlay);
 
   overlay.addEventListener('click', () => overlay.remove());
