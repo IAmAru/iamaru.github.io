@@ -81,6 +81,18 @@ a:hover {
   color: white; /* Make text visible against the dark background */
 }
 
+.container-whitespace { /* Adding this because I don't feel like editing all my posts just to fit the new white-space rule lol*/
+  position: absolute;
+  overflow-y: auto;
+  width: 92%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% opacity */
+  margin: auto;
+  border-radius: 10px; /* Optional: for rounded corners */
+  color: white; /* Make text visible against the dark background */
+  white-space: pre;
+}
+
 .index {
   position: relative;
   overflow-y: auto;
@@ -111,6 +123,7 @@ a:hover {
   margin-left: 60px;
   padding: 1em;
   overflow: hidden;
+  text-wrap: wrap;
 }
 
 ul
