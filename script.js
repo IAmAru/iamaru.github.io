@@ -96,4 +96,5 @@ document.addEventListener('DOMContentLoaded', () => {
   logo.className = 'site-logo';
   logo.innerHTML = `<img src="../../assets/signboard.png" alt="Site Logo">`;
   document.body.appendChild(logo);
+
 });
