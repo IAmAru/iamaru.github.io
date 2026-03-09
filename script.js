@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       <div id="sidebar" class="sidebar">
         <ul>
         <li></li>
-        <img src="/assets/signboard1.PNG" width="160px" />
+        <img src="/assets/signboard1.png" width="160px" />
         <li class="no-hover"></li>
         <li class="hover"><a href="/index.html">Home</a></li>
         <li><a href="https://backloggery.com/aru_star_">Backloggery</a></li>
